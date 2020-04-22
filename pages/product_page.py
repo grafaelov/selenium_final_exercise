@@ -8,7 +8,6 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         self.name_before = self.browser.find_element(*ProductPageLocators.NAME_BEFORE).text
         self.price_before = self.browser.find_element(*ProductPageLocators.PRICE_BEFORE).text
-        print(self.price_before)
         add_button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)
         add_button.click()
         self.solve_quiz_and_get_code()
@@ -28,11 +27,9 @@ class ProductPage(BasePage):
         self.should_be_correct_price()
 
     def should_be_correct_name(self):
-        # реализуйте проверку на совпадение имени
         assert self.name_before == self.name_after, f"Name mismatch, before operation the itne's name was '{self.name_before}', after add operation is '{self.name_after}'"
 
     def should_be_correct_price(self):
-        # реализуйте проверку совпадения цены
         assert self.price_before == self.price_after, f"Price mismatch, item price was '{self.price_before}', but after add operation basket the price is '{self.price_after}'"
 
     def should_not_be_success_message(self):

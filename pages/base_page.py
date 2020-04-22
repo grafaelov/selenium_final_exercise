@@ -53,7 +53,10 @@ class BasePage():
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"    
 
     def should_be_registration_link(self):
-        assert self.is_element_present(*BasePageLocators.REGISTRATION_LINK), "Registration link is not presented"    
+        assert self.is_element_present(*BasePageLocators.REGISTRATION_LINK), "Registration link is not presented"
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented, probably unauthorised user"
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
