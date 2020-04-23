@@ -5,7 +5,7 @@ import time
 
 
 class ProductPage(BasePage):
-    def add_to_basket(self):
+    def add_to_basket_promo(self):
         self.name_before = self.browser.find_element(*ProductPageLocators.NAME_BEFORE).text
         self.price_before = self.browser.find_element(*ProductPageLocators.PRICE_BEFORE).text
         add_button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)

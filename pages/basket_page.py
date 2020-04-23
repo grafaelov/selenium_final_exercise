@@ -12,7 +12,6 @@ class BasketPage(BasePage):
         assert self.is_not_element_present(*BasketPageLocators.BASKET_CONTENT_FROM_ITEM_PAGE), "Basket contains items, but should be empty"
 
     def should_be_empty_message(self, language):
-        # реализуйте проверку на корректный url адрес
         languages = {
             "ar": "سلة التسوق فارغة",
             "ca": "La seva cistella està buida.",
